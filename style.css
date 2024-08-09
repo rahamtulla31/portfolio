@@ -216,7 +216,7 @@ span{
     height: 100%;
     border-left: 5px solid var(--bg-color);
     right: -8px;
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    animation: cursor 0.6s infinite, typing 25s steps(14) infinite;
 }
 @keyframes cursor{
     to{
@@ -225,26 +225,24 @@ span{
 }
 @keyframes words{
     0%,
-    20%{
+    25%{
         content: "Java Developer";
     }
-    21%,
-    40%{
+    26%,
+    50%{
         content: "Web Developer";
     }
 
-    41%,
-    60%{
-        content: "Security Analyst";
+    51%,
+    75%{
+        content: "Android Developer";
     }
-    61%,
-    80%{
-        content: "Java Developer";
-    }
-    81%,
+
+    76%,
     100%{
-        content: "Web Developer";
+        content: "Cybersecurity Enthusiast";
     }
+    
 }
 
 @keyframes typing{
@@ -293,12 +291,11 @@ span{
     margin-bottom: 0;
 }
 .timeline-item:nth-child(odd){
-    padding-right: calc(50% +30px);
-    text-align: center;
+    padding-right: calc(50% + 30px);
+    text-align: right;
 }
 .timeline-item:nth-child(even){
-    padding-left: calc(50%+30px);
-    text-align: center;
+    padding-left: calc(50% + 30px);
 }
 .timeline-dot{
     height: 21px;
@@ -316,7 +313,7 @@ span{
     font-weight: 800;
     color: white;
     margin: 10px 0 15px;
-    text-align: justify;
+    text-align: right;
 }
 .timeline-content{
     background-color: var(--bg-color);
@@ -363,17 +360,21 @@ span{
 }
 .skills-container{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr); /* Use auto-fit for better responsiveness */
     align-items: center;
     gap: 2.5rem;
+    padding: 0 1rem; /* Add some padding to prevent content from touching edges */
 }
 .skills-box{
     background-color: var(--main-color);
-    height: 250px;
+    height: 300px;
     border-radius: 3rem;
     border: 5px solid transparent;
     cursor: pointer;
     transition: 0.4s ease-in-out;
+    overflow: hidden; /* Ensure that content doesn't overflow the box */
+    display: flex; /* Use flexbox to better align content */
+    flex-direction: column; /* Ensure content is stacked vertically */
 }
 .skills-box:hover{
     background: white;
@@ -385,20 +386,190 @@ span{
     display: flex;
     flex-direction: column;
     text-align: left;
-    max-height: 100px;
-    justify-content: left;
-    align-items: baseline;
-    padding: 5rem 5rem;
+    flex-grow: 1; /* Allow the info section to grow and take available space */
+    padding: 1rem; /* Adjust padding to fit within smaller screens */
+    overflow: hidden; /* Prevent overflow of text */
 }
 .skills-info h4{
-    font-size: 3rem;
+    font-size: 2.5rem; /* change fotn size from 1.4 to 2.5 rem */
     font-weight: 800;
-    line-height: 1.5;
+    line-height: 2;
 }
 .skills-info p{
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
     max-height: auto;
-    line-height: 1.5;
-    margin: auto;
+    line-height: 2;
+    margin: 0.5rem 0;
+}
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust to fit 1 item per row */
+    }
+}
+
+.internships{
+    background: var(--second-bg-color);
+}
+.internships-box{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.internships .heading{
+    margin-bottom: 5rem;
+    color: white;
+}
+.internships-box img{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+    padding: 0 1rem; /*add padding to prevent content from touching edges*/
+}
+.internships-item{
+    min-height: 100px;
+    max-width: 450px;
+    background: rgba(0,0,0,0.7);
+    border: 3px solid rgba(238,238,238,0.2);
+    border-radius: 2rem;
+    margin: 0 auto; /* Center items horizontally */
+    padding: 30px 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: white;
+    transition: 0.4s ease-in-out;
+    overflow: hidden; /* Prevent content overflow */
+}
+.internships-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-10px)scale(1.03);
+    box-shadow: 0 0 50px var(--main-color);
+}
+.internships-item h2{
+    font-size: 2.8rem;
+}
+.internships-item p{
+    font-size: 1.3rem;
+}
+#link{
+    color: white;
+    font-size: 2rem;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 1024px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr; /* 1 item per row on small screens */
+    }
+}
+.contact{
+    background-color: var(--bg-color);
+}
+.contact h2{
+    margin-bottom: 3rem;
+    color: white;
+}
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:3rem;
+    margin: 5rem auto;
+    text-align: center;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact form .input-box input, 
+.contact form textarea{
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+}
+.contact form .btn{
+    margin-top: 2rem;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--second-bg-color);
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--main-color);
+}
+.footer .social a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    background-color: var(--main-color);
+    color: black;
+    box-shadow: 0 0 25px var(--main-color);
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--main-color);
+}
+.footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.footer .copyright{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
 }
