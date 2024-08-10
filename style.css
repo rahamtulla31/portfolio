@@ -396,6 +396,7 @@ span{
     font-size: 2.5rem; /* change fotn size from 1.4 to 2.5 rem */
     font-weight: 800;
     line-height: 2;
+    color: black;
 }
 .skills-info p{
     font-size: 1.5rem;
@@ -403,6 +404,7 @@ span{
     max-height: auto;
     line-height: 2;
     margin: 0.5rem 0;
+    color: black;
 }
 @media (max-width: 1024px){
     .skills-container{
@@ -579,6 +581,24 @@ span{
     html{
         font-size: 55%;
     }
+    .home{
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+    .home-content h1{
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+    .home-content p{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .home-img img{
+        width: 56vw;
+    }
 }
 
 @media(max-width:991px){
@@ -639,24 +659,7 @@ span{
         margin: 3rem 0;
         color: white;
     }
-    .home{
-        flex-direction: column-reverse;
-        margin: 5rem 4rem;
-    }
-    .home-content h3{
-        font-size: 2.6rem;
-    }
-    .home-content h1{
-        font-size: 8rem;
-        margin-top: 3rem;
-    }
-    .home-content p{
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    .home-img img{
-        width: 56vw;
-    }
+    
     .skills h2{
         margin-bottom: 3rem;
     }
