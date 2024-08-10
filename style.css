@@ -193,22 +193,28 @@ span{
     color: black;
 }
 
-.text-animation{
+.text-animation {
     font-size: 34px;
     font-weight: 600;
     min-width: 280px;
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
+    overflow: hidden; /* Hides any overflow text */
+    display: inline-block; /* Ensures the element behaves like text for positioning */
 }
 
-.text-animation span{
+.text-animation span {
     position: relative;
+    display: inline-block; /* Makes sure the span is treated as an inline block for positioning */
 }
 
-.text-animation span::before{
+.text-animation span::before {
     content: "Java Developer";
     color: var(--main-color);
     animation: words 20s infinite;
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
 }
-.text-animation span::after{
+
+.text-animation span::after {
     content: "";
     background-color: var(--bg-color);
     position: absolute;
@@ -217,43 +223,39 @@ span{
     border-left: 5px solid var(--bg-color);
     right: -8px;
     animation: cursor 0.6s infinite, typing 25s steps(14) infinite;
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
 }
-@keyframes cursor{
-    to{
+
+@keyframes cursor {
+    to {
         border-left: 2px solid var(--main-color);
     }
 }
-@keyframes words{
-    0%,
-    25%{
+
+@keyframes words {
+    0%, 25% {
         content: "Java Developer";
     }
-    26%,
-    50%{
+    26%, 50% {
         content: "Web Developer";
     }
-
-    51%,
-    75%{
+    51%, 75% {
         content: "Android Developer";
     }
-
-    76%,
-    100%{
+    76%, 100% {
         content: "Cybersecurity Enthusiast";
     }
-    
 }
 
-@keyframes typing{
-    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+@keyframes typing {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
         width: 0;
     }
-
-    5%,20%,25%,40%,60%,80%,85%{
+    5%, 20%, 25%, 40%, 60%, 80%, 85% {
         width: calc(100% + 8px);
     }
 }
+
 
 .heading{
     font-size: 8rem;
@@ -581,10 +583,6 @@ span{
     html{
         font-size: 55%;
     }
-    
-}
-
-@media(max-width:991px){
     .home{
         flex-direction: column-reverse;
         margin: 5rem 4rem;
@@ -603,12 +601,17 @@ span{
     .home-img img{
         width: 40vw;
     }
-    .header{
-        padding: 2rem 3%;
-    }
     section{
         padding: 10rem 3% 2rem;   
        }
+}
+
+@media(max-width:991px){
+    
+    .header{
+        padding: 2rem 3%;
+    }
+    
     .timeline-items::before{
         left: 7px;
     }
