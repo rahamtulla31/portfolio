@@ -583,6 +583,14 @@ span{
     html{
         font-size: 55%;
     }
+    
+}
+
+@media(max-width:991px){
+    
+    .header{
+        padding: 2rem 3%;
+    }
     .home{
         flex-direction: column-reverse;
         margin: 5rem 4rem;
@@ -604,14 +612,6 @@ span{
     section{
         padding: 10rem 3% 2rem;   
        }
-}
-
-@media(max-width:991px){
-    
-    .header{
-        padding: 2rem 3%;
-    }
-    
     .timeline-items::before{
         left: 7px;
     }
