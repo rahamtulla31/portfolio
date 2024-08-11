@@ -584,7 +584,18 @@ span{
     html{
         font-size: 55%;
     }
-    .home{
+}
+
+@media(max-width:991px){
+    
+    header{
+        padding: 2rem 3%;
+    }
+   
+    section{
+        padding: 10rem 3% 2rem;   
+       }
+       .home{
         flex-direction: column-reverse;
         margin: 5rem 4rem;
     }
@@ -602,17 +613,6 @@ span{
     .home-img img{
         width: 40vw;
     }
-}
-
-@media(max-width:991px){
-    
-    header{
-        padding: 2rem 3%;
-    }
-   
-    section{
-        padding: 10rem 3% 2rem;   
-       }
     .timeline-items::before{
         left: 7px;
     }
