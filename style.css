@@ -133,15 +133,19 @@ span{
     max-width: 1000px;
 }
 
+.social-icons{
+    margin-top: 8rem;
+}
+
 .social-icons a{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 8rem;
+    height: 8rem;
     background: transparent;
     border: 2px solid var(--main-color);
-    font-size: 2.5rem;
+    font-size: 4rem;
     border-radius: 50%;
     color: var(--main-color);
     margin: 3rem 1.5rem 3rem 0;
@@ -157,19 +161,14 @@ span{
 
 .btn{
     display: inline-block;
-    padding: 1rem 2.8rem;
-    background: var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
     border-radius: 4rem;
-    font-size: 1.6rem;
-    color: black;
+    font-size: 4rem;
+    color: white;
     border: 2px solid transparent;
-    letter-spacing: 0.1rem;
-    font-weight: 600;
-    transition: 0.3s ease-in-out;
-    cursor:pointer;
+    letter-spacing: 1rem;
+    font-weight: 100;
+    transition: 0.3s ease-in-out
 }
-
 .btn:hover{
     transform: scale(1.05);
     box-shadow: 0 0 50px var(--main-color);
@@ -370,7 +369,7 @@ span{
     padding: 0 1rem; /* Add some padding to prevent content from touching edges */
 }
 .skills-box{
-    background-color: var(--main-color);
+    background-color:  #dcdcdc; /* Light gray */
     height: 300px;
     width: 580px;
     border-radius: 3rem;
@@ -409,12 +408,6 @@ span{
     margin: 0.5rem 0;
     color: black;
 }
-@media (max-width: 1085px){
-    .skills-container{
-        grid-template-columns: repeat(1, 1fr); /* Adjust to fit 1 item per row */
-    }
-}
-
 .internships{
     background: var(--second-bg-color);
 }
@@ -584,12 +577,36 @@ span{
     html{
         font-size: 55%;
     }
+   
+}
+
+@media only screen and (max-width:991px){
+    
+    .header{
+        padding: 1rem 4%; /* Reduced padding for mobile */
+    }
+    .logo {
+        font-size: 5rem; /* Reduced font size for mobile */
+    }
+
+    section {
+        padding: 2rem 3%; /* Reduced padding for mobile */
+    }
+
     .home{
         flex-direction: column-reverse;
         margin: 5rem 4rem;
     }
+
+    .home-content{
+        margin-top: 1rem;
+        width: 100%;
+        padding: 0 1rem;
+    }
     .home-content h3{
-        font-size: 2.6rem;
+        margin-bottom: 3rem; /* Reduced margin for mobile */
+        margin-top: 0.5rem; /* Reduced margin for mobile */
+        font-size: 4rem; /* Reduced font size for mobile */
     }
     .home-content h1{
         font-size: 8rem;
@@ -602,17 +619,10 @@ span{
     .home-img img{
         width: 40vw;
     }
-}
-
-@media(max-width:991px){
-    
-    header{
-        padding: 2rem 3%;
+    .navbar a {
+        font-size: 2.5rem;
+        margin-left: 1rem; /* Reduced margin for mobile */
     }
-   
-    section{
-        padding: 10rem 3% 2rem;   
-       }
     .timeline-items::before{
         left: 7px;
     }
@@ -629,6 +639,21 @@ span{
     }
     .skills{
         padding-bottom: 7rem;
+    }
+    .skills-container{
+        grid-template-columns: repeat(1, 1fr); /* Adjust to fit 1 item per row */
+    }
+    .skills-box{
+        background-color:  #dcdcdc; /* Light gray */
+        height: 320px;
+        width: 800px;
+    }
+    .skills-info h4{
+        font-size: 4rem;
+    }
+    .skills-info p{
+        font-size: 2rem;
+        font-weight: 600;
     }
     .contact form{
         flex-direction: column;
