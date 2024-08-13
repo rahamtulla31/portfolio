@@ -750,6 +750,18 @@ span{
     
     .skills h2{
         margin-bottom: 3rem;
+    }    
+    .skills-box{
+        background-color:  #dcdcdc; /* Light gray */
+        height: 400px;
+        width: 650px;
+    }
+    .skills-info h4{
+        font-size: 3rem;
+    }
+    .skills-info p{
+        font-size: 2rem;
+        font-weight: 600;
     }
     .skills-container{
         grid-template-columns: repeat(1,1fr);
