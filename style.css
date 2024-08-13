@@ -141,11 +141,11 @@ span{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 8rem;
-    height: 8rem;
+    width: 4rem;
+    height: 4rem;
     background: transparent;
     border: 2px solid var(--main-color);
-    font-size: 4rem;
+    font-size: 2rem;
     border-radius: 50%;
     color: var(--main-color);
     margin: 3rem 1.5rem 3rem 0;
@@ -161,8 +161,8 @@ span{
 
 .btn{
     display: inline-block;
-    border-radius: 4rem;
-    font-size: 4rem;
+    border-radius: 2rem; /*changes border radius from 4rem to 3rem for windows and fotnsize too. For better viewing experience in mobile updated media query*/
+    font-size: 2rem;
     color: white;
     border: 2px solid transparent;
     letter-spacing: 1rem;
@@ -469,16 +469,7 @@ span{
     color: white;
     font-size: 2rem;
 }
-@media (max-width: 1085px){
-    .wrapper{
-        grid-template-columns: repeat(2, 1fr);  /*Adjust to fit 1 item per row */
-    }
-}
-@media (max-width: 768px) {
-    .wrapper {
-        grid-template-columns: 1fr; /* 1 item per row on small screens */
-    }
-}
+
 .contact{
     background-color: var(--bg-color);
 }
@@ -486,14 +477,7 @@ span{
     margin-bottom: 3rem;
     color: white;
 }
-.contact form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:3rem;
-    margin: 5rem auto;
-    text-align: center;
-}
+
 .contact form .input-box{
     display: flex;
     justify-content: center;
@@ -509,10 +493,11 @@ span{
     border-radius: 2rem;
     border: 2px solid var(--main-color);
     margin: 1.5rem 0;
-    resize: none;
+    
 }
 .contact form .btn{
     margin-top: 2rem;
+    color: black;
 }
 .footer{
     position: relative;
@@ -573,14 +558,27 @@ span{
     color: white;
 }
 
+@media(min-width: 1086px){ /* For viwiening experience in mobile cutted it from above and pasted it here*/
+    .contact form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:3rem;
+        margin: 5rem auto;
+        text-align: center;
+    }
+}
 @media(max-width:1085px){
     html{
         font-size: 55%;
     }
+    .wrapper{
+        grid-template-columns: repeat(2, 1fr);  /*Adjust to fit 1 item per row */
+    }
    
 }
 
-@media only screen and (max-width:991px){
+@media (max-width:991px){
     
     .header{
         padding: 1rem 4%; /* Reduced padding for mobile */
@@ -623,6 +621,15 @@ span{
         font-size: 2.5rem;
         margin-left: 1rem; /* Reduced margin for mobile */
     }
+    .social-icons a{
+        width: 8rem;
+        height: 8rem;
+        font-size: 4rem;
+    }
+    .btn{
+        border-radius: 4rem;
+        font-size: 4rem;
+    }
     .timeline-items::before{
         left: 7px;
     }
@@ -645,21 +652,72 @@ span{
     }
     .skills-box{
         background-color:  #dcdcdc; /* Light gray */
-        height: 320px;
+        height: 400px;
         width: 800px;
     }
     .skills-info h4{
         font-size: 4rem;
     }
     .skills-info p{
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 600;
     }
-    .contact form{
-        flex-direction: column;
+    .internships-item h2{
+        font-size: 4rem;
+    }
+    .internships-item p{
+        font-size: 2rem;
+    }
+    #link{
+        font-size: 3rem;
+    }
+    .contact{
+        min-height: 50vh; /* Adjusted min-height for mobile */
+        padding: 4rem 5% 4rem; /* Adjusted padding for mobile */
+    }
+    .contact form {
+        display: flex;
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: center; /* Center align items horizontally */
+        gap: 1rem; /* Space between form elements */
+        width: 100%; /* Full width to accommodate padding adjustments */
+    }
+    .contact form .input-box input, 
+    .contact form textarea {
+        padding: 2rem; /* Adjusted padding for mobile */
+        font-size: 3rem; /* Font size for readability */
+        border-radius: 2rem; /* Adjusted border radius for mobile */
+        border: 2px solid var(--main-color); /* Border color */
+        margin-bottom: 3rem; /* Space between form elements */
+    }
+
+    .contact form .btn {
+        padding: 1rem; /* Adjusted padding for button */
+        font-size: 2rem; /* Font size for button */
+        margin-top: 3rem; /* Space above the button */
     }
     .footer{
-        padding: 2rem 3%;
+        padding: 40px 0;
+    }
+    .footer .social a{
+        width: 8rem;
+        height: 8rem;
+        font-size: 5rem;
+        margin: 2rem;
+    }
+    .footer ul{
+        font-size: 20px;
+    }
+    .footer ul li {
+        padding: 0 20px; /* Increased padding for mobile */
+    }
+
+    .footer ul li a {
+        font-size: 20px; /* Increased font size for mobile */
+    }
+
+    .footer .copyright{
+        font-size: 32px;
     }
 }
 
@@ -696,5 +754,8 @@ span{
     .skills-container{
         grid-template-columns: repeat(1,1fr);
        
+    }
+    .wrapper {
+        grid-template-columns: 1fr; /* 1 item per row on small screens */
     }
 }
